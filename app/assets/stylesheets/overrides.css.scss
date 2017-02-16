@@ -172,6 +172,7 @@
 // .ns-utility-class {}
 
 $ns-yellow: #e8bc4e;
+$ns-very-light-grey: #f2f2f2;
 $ns-light-grey: #bcbdbe;
 $ns-very-dark-grey: #2e2e2e;
 $ns-dark-grey: #373737;
@@ -181,8 +182,9 @@ $ns-red: #e6595d;
 $ns-green: #27d596;
 $ns-blue: #17b9c9;
 $ns-white-opacity-25: rgba(255, 255, 255, 0.25);
-$ns-white-opacity-20: rgba(255, 255, 255, 0.2);
+$ns-white-opacity-20: rgba(255, 255, 255, 0.20);
 $ns-white-opacity-05: rgba(255, 255, 255, 0.05);
+$ns-black-opacity-10: rgba(0, 0, 0, 0.10);
 
 html, body {
   height: 100%;
@@ -206,7 +208,7 @@ html, body {
     background: $ns-dark-grey asset-url("ns-template-column-left-background.png") repeat-y top right;
     color: $ns-white;
     @include order(1);
-    @include flex-basis(250px);
+    @include flex-basis(257px);
     @include screen-format(phone) {
       padding: 0;
       background: $ns-dark-grey;
@@ -245,7 +247,7 @@ html, body {
         font-family: $font-secondary;
         font-size: 16px;
         line-height: 25px;
-        font-weight: 800;
+        font-weight: 700;
         text-align: center;
       }
       #ns-template-column-left-header-actions {
@@ -277,7 +279,7 @@ html, body {
         font-family: $font-secondary;
         font-size: 10px;
         line-height: 15px;
-        font-weight: 800;
+        font-weight: 700;
         text-transform: uppercase;
         color: $ns-yellow;
       }
@@ -294,6 +296,7 @@ html, body {
           display: block;
           float: left;
           width: 100%;
+          min-width: 252px;
           padding: 12px 20px 13px 20px;
           font-family: $font-secondary;
           font-size: 13px;
@@ -313,9 +316,10 @@ html, body {
             display: block;
             float: right;
             height: 23px;
-            padding: 0 5px;
+            padding: 0 7px;
             font-size: 10px;
             line-height: 23px;
+            font-weight: 700;
             text-align: center;
             background: $ns-purple;
             @include border-radius(3px);
@@ -330,9 +334,9 @@ html, body {
     }
   }
   #ns-template-column-middle {
-    padding: 0 40px;
+    padding: 0 48px;
     @include order(2);
-    @include flex-basis(1);
+    @include flex-basis(100%);
     @include screen-format(phone) {
       padding: 0;
       @include flex-basis(100%);
@@ -340,16 +344,219 @@ html, body {
     @include screen-format(nano) {
       padding: 0;
       @include flex-basis(100%);
+    }
+    ol#ns-module-breadcrumbs {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 10px 0 0 0;
+      border-bottom: 1px solid $ns-black-opacity-10;
+      > li {
+        display: inline-block;
+        span,
+        a {
+          display: inline-block;
+          font-family: $font-secondary;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 20px;
+          text-transform: uppercase;
+          color: $ns-light-grey;
+        }
+      }
+      > li:first-child {
+        span,
+        a {
+          color: $ns-yellow;
+        }
+      }
+      > li:before {
+        display: inline-block;
+        padding: 0 6px 0 5px;
+        font-family: $font-secondary;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 20px;
+        color: $ns-light-grey;
+        content: "»";
+        position: relative;
+        top: -1px;
+      }
+      > li:first-child:before {
+        display: none;
+        visibility: hidden;
+      }
+    }
+    .ns-module-header {
+      display: block;
+      float: left;
+      width: 100%;
+      padding: 60px 0 0 0;
+      margin: 0 0 40px 0;
+      position: relative;
+      .ns-module-header-information {
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 0 624px 0 0;
+        @include box-sizing(border-box);
+        > h1 {
+          display: block;
+          float: left;
+          width: 100%;
+          margin: 0 0 20px 0;
+          font-size: 72px;
+          line-height: 85px;
+          font-weight: 200;
+        }
+        > p {
+          display: block;
+          float: left;
+          width: 100%;
+        }
+      }
+      .ns-module-header-actions {
+        display: block;
+        float: right;
+        width: 264px;
+        position: absolute;
+        right: 0;
+        .ns-button,
+        input[type="submit"],
+        input[type="button"],
+        input[type="reset"],
+        button {
+          float: left;
+          width: 100%;
+          margin: 0 0 5px 0;
+        }
+      }
+    }
+    .ns-module-generic {
+      display: block;
+      float: left;
+      width: 100%;
+      h3.ns-module-generic-header {
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 0 0 10px 0;
+        margin: 0 0 20px 0;
+        border-bottom: 1px solid $ns-black-opacity-10;
+        font-family: $font-secondary;
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+    .ns-module-actions {
+      display: block;
+      float: left;
+      width: 100%;
+      .ns-button,
+      input[type="submit"],
+      input[type="button"],
+      input[type="reset"],
+      button {
+        float: left;
+        margin: 0 5px 0 0;
+      }
     }
   }
   #ns-template-column-right {
+    background: $ns-very-light-grey asset-url("ns-template-column-right-background.png") repeat-y top left;
     @include order(3);
-    @include flex-basis(250px);
+    @include flex-basis(252px);
     @include screen-format(phone) {
       @include flex-basis(100%);
     }
     @include screen-format(nano) {
       @include flex-basis(100%);
+    }
+    ol.ns-template-column-right-menu {
+      > li {
+        > a,
+        > span {
+          display: block;
+          float: left;
+          width: 100%;
+          min-width: 252px;
+          padding: 12px 20px 13px 20px;
+          font-size: 14px;
+          line-height: 20px;
+          @include box-sizing(border-box);
+          > span.ns-template-column-right-menu-badge {
+            display: block;
+            float: right;
+            height: 23px;
+            padding: 0 7px;
+            font-size: 10px;
+            line-height: 23px;
+            font-weight: 700;
+            text-align: center;
+            background: $ns-purple;
+            @include border-radius(3px);
+          }
+        }
+      }
+    }
+  }
+}
+
+ol.ns-font-specimens {
+  display: block;
+  float: left;
+  width: 100%;
+  > li {
+    display: block;
+    float: left;
+    width: 160px;
+    margin: 0 48px 48px 0;
+    position: relative;
+    > span:before {
+      display: block;
+      float: left;
+      width: 25%;
+      height: 4px;
+      background: $ns-white;
+      content: " ";
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    > span {
+      display: block;
+      float: left;
+      width: 100%;
+      height: 180px;
+      margin: 0 0 5px 0;
+      border-top: 4px solid $color-text-body;
+      border-right: 1px solid $color-text-body;
+      border-bottom: 1px solid $color-text-body;
+      border-left: 1px solid $color-text-body;
+      font-size: 90px;
+      line-height: 165px;
+      text-align: center;
+      font-weight: 200;
+      @include box-sizing(border-box);
+    }
+    > strong {
+      display: block;
+      float: left;
+      width: 100%;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    > em {
+      display: block;
+      float: left;
+      width: 100%;
+      font-style: italic;
+      color: $ns-light-grey;
+      font-size: 12px;
+      line-height: 16px;
     }
   }
 }
