@@ -171,6 +171,130 @@
 
 // .ns-utility-class {}
 
+$ns-yellow: #e8bc4e;
+$ns-light-grey: #bcbdbe;
+$ns-dark-grey: #2e2e2e;
+$ns-white: #ffffff;
+$ns-purple: #a469bb;
+$ns-red: #e6595d;
+$ns-green: #27d596;
+$ns-blue: #17b9c9;
+$ns-white-opacity-20: rgba(255, 255, 255, 0.2);
+$ns-white-opacity-05: rgba(255, 255, 255, 0.05);
+
+html, body {
+  height: 100%;
+}
+
+#ns-template {
+  height: 100%;
+  @include display-flex;
+  @include flex-wrap(nowrap);
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include align-items(stretch);
+  @include screen-format(phone) {
+    @include flex-wrap(wrap);
+  }
+  @include screen-format(nano) {
+    @include flex-wrap(wrap);
+  }
+  #ns-template-column-left {
+    padding: 0 5px 0 0;
+    background: $ns-dark-grey asset-url("ns-template-column-left-background.png") repeat-y top right;
+    color: $ns-white;
+    @include order(1);
+    @include flex-basis(250px);
+    @include screen-format(phone) {
+      @include flex-basis(100%);
+    }
+    @include screen-format(nano) {
+      @include flex-basis(100%);
+    }
+    #ns-template-column-left-header {
+      display: block;
+      float: left;
+      width: 100%;
+      #ns-template-column-left-header-logo {
+        display: block;
+        float: left;
+        width: 100%;
+      }
+      #ns-template-column-left-header-title {
+        display: block;
+        float: left;
+        width: 100%;
+      }
+      #ns-template-column-left-header-actions {
+        display: block;
+        float: left;
+        width: 100%;
+        > a {
+          color: $ns-white;
+        }
+      }
+    }
+    h4.ns-template-column-left-menu-header {
+      display: block;
+      float: left;
+      width: 100%;
+      padding: 0 20px;
+      border-bottom: 1px solid $ns-white-opacity-05;
+      font-family: $font-primary;
+      font-size: 10px;
+      line-height: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $ns-yellow;
+      @include box-sizing(border-box);
+    }
+    ol.ns-template-column-left-menu {
+      display: block;
+      float: left;
+      width: 100%;
+      > li {
+        display: block;
+        float: left;
+        width: 100%;
+        > a {
+          display: block;
+          float: left;
+          width: 100%;
+          padding: 12px 20px 13px 20px;
+          font-family: $font-secondary;
+          font-size: 13px;
+          line-height: 20px;
+          color: $ns-white;
+          @include box-sizing(border-box);
+          > span.ss-icon {
+            @include opacity(.5);
+          }
+        }
+      }
+    }
+  }
+  #ns-template-column-middle {
+    @include order(2);
+    @include flex-basis(1);
+    @include screen-format(phone) {
+      @include flex-basis(100%);
+    }
+    @include screen-format(nano) {
+      @include flex-basis(100%);
+    }
+  }
+  #ns-template-column-right {
+    @include order(3);
+    @include flex-basis(250px);
+    @include screen-format(phone) {
+      @include flex-basis(100%);
+    }
+    @include screen-format(nano) {
+      @include flex-basis(100%);
+    }
+  }
+}
+
 
 
 // ****************************************************************************************************
