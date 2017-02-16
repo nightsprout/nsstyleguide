@@ -173,12 +173,14 @@
 
 $ns-yellow: #e8bc4e;
 $ns-light-grey: #bcbdbe;
-$ns-dark-grey: #2e2e2e;
+$ns-very-dark-grey: #2e2e2e;
+$ns-dark-grey: #373737;
 $ns-white: #ffffff;
 $ns-purple: #a469bb;
 $ns-red: #e6595d;
 $ns-green: #27d596;
 $ns-blue: #17b9c9;
+$ns-white-opacity-25: rgba(255, 255, 255, 0.25);
 $ns-white-opacity-20: rgba(255, 255, 255, 0.2);
 $ns-white-opacity-05: rgba(255, 255, 255, 0.05);
 
@@ -206,30 +208,56 @@ html, body {
     @include order(1);
     @include flex-basis(250px);
     @include screen-format(phone) {
+      padding: 0;
+      background: $ns-dark-grey;
       @include flex-basis(100%);
     }
     @include screen-format(nano) {
+      padding: 0;
+      background: $ns-dark-grey;
       @include flex-basis(100%);
     }
     #ns-template-column-left-header {
       display: block;
       float: left;
       width: 100%;
+      padding: 30px 0;
+      margin: 0 0 10px 0;
+      background: $ns-very-dark-grey;
+      text-align: center;
       #ns-template-column-left-header-logo {
         display: block;
         float: left;
         width: 100%;
+        text-align: center;
+        > img {
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          border: 5px solid $ns-white-opacity-25;
+          @include border-radius(100px);
+        }
       }
       #ns-template-column-left-header-title {
         display: block;
         float: left;
         width: 100%;
+        font-family: $font-secondary;
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 800;
+        text-align: center;
       }
       #ns-template-column-left-header-actions {
         display: block;
         float: left;
         width: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
         > a {
+          display: inline-block;
+          margin: 0 5px;
           color: $ns-white;
         }
       }
@@ -239,14 +267,20 @@ html, body {
       float: left;
       width: 100%;
       padding: 0 20px;
-      border-bottom: 1px solid $ns-white-opacity-05;
-      font-family: $font-primary;
-      font-size: 10px;
-      line-height: 15px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: $ns-yellow;
+      margin: 10px 0 0 0;
       @include box-sizing(border-box);
+      > span {
+        display: block;
+        float: left;
+        width: 100%;
+        border-bottom: 1px solid $ns-white-opacity-05;
+        font-family: $font-secondary;
+        font-size: 10px;
+        line-height: 15px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $ns-yellow;
+      }
     }
     ol.ns-template-column-left-menu {
       display: block;
@@ -267,19 +301,44 @@ html, body {
           color: $ns-white;
           @include box-sizing(border-box);
           > span.ss-icon {
+            display: inline-block;
+            margin: 0 5px 0 0;
+            font-size: 14px;
+            line-height: 20px;
             @include opacity(.5);
+            position: relative;
+            top: 2px;
           }
+          > span.ns-template-column-left-menu-badge {
+            display: block;
+            float: right;
+            height: 23px;
+            padding: 0 5px;
+            font-size: 10px;
+            line-height: 23px;
+            text-align: center;
+            background: $ns-purple;
+            @include border-radius(3px);
+          }
+        }
+        > a.ns-template-column-left-menu-item-current,
+        > a:hover {
+          text-decoration: none;
+          background: $ns-white-opacity-05;
         }
       }
     }
   }
   #ns-template-column-middle {
+    padding: 0 40px;
     @include order(2);
     @include flex-basis(1);
     @include screen-format(phone) {
+      padding: 0;
       @include flex-basis(100%);
     }
     @include screen-format(nano) {
+      padding: 0;
       @include flex-basis(100%);
     }
   }
