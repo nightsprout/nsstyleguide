@@ -14,25 +14,11 @@
 </head>
 
 <body
-  ng-resize="nsStateMachine.navDrawer.hide()"
   ng-app="AngularApp"
-  ng-class="{ 'ns-slider-expanded' : nsStateMachine.navDrawer.isVisible }"
   ng-controller="<%= @angularController || 'baseController' %>"
   >
 
-<%= render :partial => "shared/screen" %>
-
-<%= render :partial => "shared/warning" %>
-
-<%= render :partial => "shared/navigation" %>
-
-<%= render :partial => "shared/slider" %>
-
-<%= render :partial => "shared/notifications" %>
-
 <%= yield %>
-
-<%= render :partial => "shared/footer" %>
 
 </body>
 
