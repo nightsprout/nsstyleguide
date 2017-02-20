@@ -28,4 +28,12 @@ class HomeController < ApplicationController
     @angularController = 'baseController'
   end
 
+  def logo
+    @angularController = 'baseController'
+  end
+
+  def typography
+    @angularController = 'baseController'
+  end
+
 end

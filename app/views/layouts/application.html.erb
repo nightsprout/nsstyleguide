@@ -18,7 +18,105 @@
   ng-controller="<%= @angularController || 'baseController' %>"
   >
 
+  <div id="ns-template">
+
+    <div id="ns-template-column-left">
+      <div id="ns-template-column-left-header">
+        <div id="ns-template-column-left-header-logo">
+          <img src="<%= asset_path("core/nav-logo.png") %>" />
+        </div>
+        <!-- #ns-template-column-left-header-logo -->
+        <h3 id="ns-template-column-left-header-title">
+          PZ Flex
+        </h3>
+        <!-- #ns-template-column-left-header-title -->
+        <h3 id="ns-template-column-left-header-actions">
+          <a href="/">Home</a> | <a href="#">Go Back</a>
+        </h3>
+        <!-- #ns-template-column-left-header-actions -->
+      </div>
+      <!-- #ns-template-column-left-header -->
+      <h4 class="ns-template-column-left-menu-header">
+        <span>Branding Elements</span>
+      </h4>
+      <!-- h4.ns-template-column-left-menu-header -->
+      <ol class="ns-template-column-left-menu">
+        <li><a class="<% if action_name === 'logo'         %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="/logo"><span class="ss-icon">User</span> Logo <span class="ns-template-column-left-menu-badge">2</span></a></li>
+        <li><a class="<% if action_name === 'colors'       %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="#"><span class="ss-icon">User</span> Colors <span class="ns-template-column-left-menu-badge">5</span></a></li>
+        <li><a class="<% if action_name === 'typography'   %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="/typography"><span class="ss-icon">User</span> Typography <span class="ns-template-column-left-menu-badge">3</span></a></li>
+        <li><a class="<% if action_name === 'icons'        %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="#"><span class="ss-icon">User</span> Icon Sets <span class="ns-template-column-left-menu-badge">1</span></a></li>
+      </ol>
+      <!-- ol.ns-template-column-left-menu -->
+      <h4 class="ns-template-column-left-menu-header">
+        <span>UI Elements</span>
+      </h4>
+      <!-- h4.ns-template-column-left-menu-header -->
+      <ol class="ns-template-column-left-menu">
+        <li><a class="<% if action_name === 'buttons'      %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="#"><span class="ss-icon">User</span> Buttons <span class="ns-template-column-left-menu-badge">6</span></a></li>
+        <li><a class="<% if action_name === 'tables'       %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="#"><span class="ss-icon">User</span> Tables <span class="ns-template-column-left-menu-badge">1</span></a></li>
+        <li><a class="<% if action_name === 'lists'        %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="#"><span class="ss-icon">User</span> Tiled Lists <span class="ns-template-column-left-menu-badge">3</span></a></li>
+        <li><a class="<% if action_name === 'forms'        %><%= 'ns-template-column-left-menu-item-current' %><% end %>" href="#"><span class="ss-icon">User</span> Forms <span class="ns-template-column-left-menu-badge">1</span></a></li>
+      </ol>
+      <!-- ol.ns-template-column-left-menu -->
+    </div>
+    <!-- #ns-template-column-left -->
+
+
 <%= yield %>
+
+
+    <div id="ns-template-column-right">
+
+      <h5 class="ns-template-column-right-header">
+        <strong><span>Patch</span> ReleaseNotes</strong>
+      </h5>
+      <!-- h5.ns-template-column-right-header -->
+
+
+      <ol class="ns-template-column-right-menu">
+        <li>
+          <a href="#">
+            <strong>Patch</strong> 0.0.5<br />
+            <em>February 20th, 2017</em>
+            <span class="ns-template-column-right-menu-badge">21</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Patch</strong> 0.0.4<br />
+            <em>February 20th, 2017</em>
+            <span class="ns-template-column-right-menu-badge">3</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Patch</strong> 0.0.3<br />
+            <em>February 20th, 2017</em>
+            <span class="ns-template-column-right-menu-badge">9</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Patch</strong> 0.0.2<br />
+            <em>February 20th, 2017</em>
+            <span class="ns-template-column-right-menu-badge">13</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Patch</strong> 0.0.1<br />
+            <em>February 20th, 2017</em>
+            <span class="ns-template-column-right-menu-badge">15</span>
+          </a>
+        </li>
+      </ol>
+      <!-- ol.ns-template-column-right-menu -->
+
+    </div>
+    <!-- #ns-template-column-right -->
+
+  </div>
+  <!-- #ns-template -->
 
 </body>
 

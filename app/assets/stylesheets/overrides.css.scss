@@ -256,7 +256,7 @@ button.ns-button-large {
   }
   #ns-template-column-left {
     padding: 0 5px 0 0;
-    background: $ns-dark-grey asset-url("ns-template-column-left-background.png") repeat-y top right;
+    background: $ns-dark-grey asset-url("core/ns-template-column-left-background.png") repeat-y top right;
     color: $ns-white;
     @include order(1);
     @include flex-basis(257px);
@@ -504,6 +504,11 @@ button.ns-button-large {
         font-weight: 700;
         text-transform: uppercase;
       }
+      .ns-module-generic-content {
+        display: block;
+        float: left;
+        width: 100%;
+      }
     }
     .ns-module-actions {
       display: block;
@@ -520,7 +525,7 @@ button.ns-button-large {
     }
   }
   #ns-template-column-right {
-    background: $ns-very-light-grey asset-url("ns-template-column-right-background.png") repeat-y top left;
+    background: $ns-very-light-grey asset-url("core/ns-template-column-right-background.png") repeat-y top left;
     @include order(3);
     @include flex-basis(252px);
     @include screen-format(phone) {
@@ -609,6 +614,7 @@ ol.ns-font-specimens {
   display: block;
   float: left;
   width: 100%;
+  font-family: 'Helvetica';
   > li {
     display: block;
     float: left;
@@ -624,7 +630,7 @@ ol.ns-font-specimens {
       content: " ";
       position: absolute;
       top: 0;
-      right: 0;
+      right: 1px;
     }
     > span {
       display: block;
