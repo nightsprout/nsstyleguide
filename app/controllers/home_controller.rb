@@ -32,7 +32,15 @@ class HomeController < ApplicationController
     @angularController = 'baseController'
   end
 
+  def colors
+    @angularController = 'baseController'
+  end
+
   def typography
+    @angularController = 'baseController'
+  end
+
+  def lists
     @angularController = 'baseController'
   end
 

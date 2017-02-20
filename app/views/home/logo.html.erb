@@ -1,9 +1,9 @@
     <div id="ns-template-column-middle">
 
       <ol id="ns-module-breadcrumbs">
-        <li><span>PZ Flex Style Guide</span></li>
+        <li><a href="/">PZ Flex Style Guide</a></li>
         <li><span>Branding Elements</span></li>
-        <li><a href="#">Logo</a></li>
+        <li><a href="/logo">Logo</a></li>
       </ol>
       <!-- #ns-module-breacrumbs -->
 
@@ -14,8 +14,8 @@
         </div>
         <!-- .ns-module-header-information -->
         <div class="ns-module-header-actions">
-          <button class="ns-button ns-button-green ns-button-large">Next Section</button><!-- button.ns-button -->
-          <button class="ns-button ns-button-red">Previous Section</button><!-- button.ns-button -->
+          <a class="ns-button ns-button-green ns-button-large" href="/colors">Next Section</a><!-- a.ns-button -->
+          <a class="ns-button ns-button-red" href="/forms">Previous Section</a><!-- a.ns-button -->
         </div>
         <!-- .ns-module-header-actions -->
       </div>
@@ -27,16 +27,27 @@
         </h3>
         <!-- .ns-module-generic-header -->
         <div class="ns-module-generic-content">
-          <img src="<%= asset_path("pz-flex-logo-on-background.png") %>" alt="Application logo (links to home page)." />
-          <img src="<%= asset_path("pz-flex-logo.png") %>" alt="Application logo (links to home page)." />
+          <img class="ns-logo-specimen" src="<%= asset_path("pz-flex-logo.png") %>" alt="Application logo (links to home page)." />
+        </div>
+        <!-- .ns-module-generic-content -->
+      </div>
+      <!-- .ns-module-generic -->
+
+      <div class="ns-module-generic">
+        <h3 class="ns-module-generic-header">
+          Secondary Logotype (On Dark Background)
+        </h3>
+        <!-- .ns-module-generic-header -->
+        <div class="ns-module-generic-content">
+          <img class="ns-logo-specimen" src="<%= asset_path("pz-flex-logo-on-background.png") %>" alt="Application logo (links to home page)." />
         </div>
         <!-- .ns-module-generic-content -->
       </div>
       <!-- .ns-module-generic -->
 
       <div class="ns-module-actions">
-        <button class="ns-button ns-button-green">Next Section</button><!-- button.ns-button -->
-        <button class="ns-button ns-button-red">Previous Section</button><!-- button.ns-button -->
+        <a class="ns-button ns-button-green" href="/colors">Next Section</a><!-- a.ns-button -->
+        <a class="ns-button ns-button-red" href="/forms">Previous Section</a><!-- a.ns-button -->
       </div>
       <!-- .ns-module-actions -->
 

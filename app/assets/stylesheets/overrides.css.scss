@@ -610,11 +610,11 @@ button.ns-button-large {
   }
 }
 
+ol.ns-icon-specimens,
 ol.ns-font-specimens {
   display: block;
   float: left;
   width: 100%;
-  font-family: 'Helvetica';
   > li {
     display: block;
     float: left;
@@ -645,7 +645,6 @@ ol.ns-font-specimens {
       font-size: 90px;
       line-height: 165px;
       text-align: center;
-      font-weight: 200;
       @include box-sizing(border-box);
     }
     > strong {
@@ -668,6 +667,81 @@ ol.ns-font-specimens {
   }
 }
 
+ol.ns-icon-specimens {
+  > li {
+    > span {
+      line-height: 195px;
+    }
+  }
+}
+
+ol.ns-font-specimens {
+  font-weight: bold;
+  > li {
+    > span {
+      font-family: 'Helvetica Neue';
+    }
+  }
+}
+
+.ns-logo-specimen {
+  display: block;
+  float: left;
+  margin: 0 0 48px 0;
+}
+
+ol.ns-color-specimens {
+  display: block;
+  float: left;
+  width: 100%;
+  > li {
+    display: block;
+    float: left;
+    width: 160px;
+    margin: 0 48px 48px 0;
+    > span {
+      display: block;
+      float: left;
+      width: 160px;
+      height: 160px;
+      border: 5px solid $ns-white;
+      margin: 0 0 10px 0;
+      @include box-shadow(0 0 160px 0 rgba(0, 0, 0, 0.10));
+      @include box-sizing(border-box);
+      @include border-radius(160px);
+    }
+    > strong {
+      display: block;
+      float: left;
+      width: 100%;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+    }
+    > em {
+      display: block;
+      float: left;
+      width: 100%;
+      font-style: italic;
+      color: $ns-light-grey;
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
+  }
+}
+
+ol.ns-button-specimens {
+  display: block;
+  float: left;
+  width: 100%;
+  > li {
+    display: block;
+    float: left;
+    margin: 0 10px 48px 0;
+  }
+}
 
 
 // ****************************************************************************************************

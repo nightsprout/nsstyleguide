@@ -13,7 +13,7 @@ AngularApp.controller("baseController", ["$rootScope", "$scope", "httpService", 
   var getModelFailure = function(payload, status) {};
 
   // Initiate the HTTP request.
-  httpService.getApiEndpoint(apiEndpoint).success(getModelSuccess);
+  // httpService.getApiEndpoint(apiEndpoint).success(getModelSuccess);
 
 }]);
 
