@@ -185,13 +185,64 @@ $ns-white-opacity-25: rgba(255, 255, 255, 0.25);
 $ns-white-opacity-20: rgba(255, 255, 255, 0.20);
 $ns-white-opacity-05: rgba(255, 255, 255, 0.05);
 $ns-black-opacity-10: rgba(0, 0, 0, 0.10);
+$ns-black-opacity-05: rgba(0, 0, 0, 0.05);
 
 html, body {
   height: 100%;
 }
 
+// Button Color Variations
+// **************************************************
+
+.ns-button.ns-button-red,
+input[type="submit"].ns-button-red,
+input[type="button"].ns-button-red,
+input[type="reset"].ns-button-red,
+button.ns-button-red {
+  color: $ns-white;
+  background: $ns-red;
+}
+
+.ns-button.ns-button-green,
+input[type="submit"].ns-button-green,
+input[type="button"].ns-button-green,
+input[type="reset"].ns-button-green,
+button.ns-button-green {
+  color: $ns-white;
+  background: $ns-green;
+}
+
+.ns-button.ns-button-grey,
+input[type="submit"].ns-button-grey,
+input[type="button"].ns-button-grey,
+input[type="reset"].ns-button-grey,
+button.ns-button-grey {
+  color: $ns-white;
+  background: $ns-light-grey;
+}
+
+
+// Button "Large" Variation (Override)
+// **************************************************
+
+.ns-button.ns-button-large,
+input[type="submit"].ns-button-large,
+input[type="button"].ns-button-large,
+input[type="reset"].ns-button-large,
+button.ns-button-large {
+  text-transform: capitalize;
+  font-size: 25px;
+  line-height: $font-primary-text-line-height;
+  font-weight: 700;
+  font-family: $font-primary;
+}
+
+
+// Main Template SCSS
+// **************************************************
+
 #ns-template {
-  height: 100%;
+  min-height: 100%;
   @include display-flex;
   @include flex-wrap(nowrap);
   @include flex-direction(row);
@@ -352,10 +403,13 @@ html, body {
       margin: 10px 0 0 0;
       border-bottom: 1px solid $ns-black-opacity-10;
       > li {
-        display: inline-block;
+        display: block;
+        float: left;
+        padding: 5px 0;
         span,
         a {
-          display: inline-block;
+          display: block;
+          float: left;
           font-family: $font-secondary;
           font-weight: 700;
           font-size: 12px;
@@ -371,7 +425,8 @@ html, body {
         }
       }
       > li:before {
-        display: inline-block;
+        display: block;
+        float: left;
         padding: 0 6px 0 5px;
         font-family: $font-secondary;
         font-weight: 700;
@@ -460,7 +515,7 @@ html, body {
       input[type="reset"],
       button {
         float: left;
-        margin: 0 5px 0 0;
+        margin: 0 5px 40px 0;
       }
     }
   }
@@ -474,18 +529,54 @@ html, body {
     @include screen-format(nano) {
       @include flex-basis(100%);
     }
+    h5.ns-template-column-right-header {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 10px 0;
+      padding: 0 20px;
+      @include box-sizing(border-box);
+      > strong {
+        display: block;
+        float: left;
+        width: 100%;
+        padding: 5px 0;
+        border-bottom: 1px solid $ns-black-opacity-10;
+        font-family: $font-secondary;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $ns-light-grey;
+        > span {
+          color: $ns-yellow;
+        }
+      }
+    }
     ol.ns-template-column-right-menu {
+      display: block;
+      float: left;
+      width: 100%;
       > li {
+        display: block;
+        float: left;
+        width: 100%;
         > a,
         > span {
           display: block;
           float: left;
           width: 100%;
           min-width: 252px;
-          padding: 12px 20px 13px 20px;
+          padding: 7px 20px 8px 15px;
+          border-left: 5px solid transparent;
           font-size: 14px;
-          line-height: 20px;
+          line-height: 18px;
           @include box-sizing(border-box);
+          position: relative;
+          > em {
+            font-size: 12px;
+            @include opacity(0.66);
+          }
           > span.ns-template-column-right-menu-badge {
             display: block;
             float: right;
@@ -496,8 +587,18 @@ html, body {
             font-weight: 700;
             text-align: center;
             background: $ns-purple;
+            color: $ns-white;
             @include border-radius(3px);
+            position: absolute;
+            right: 20px;
+            top: 14px;
           }
+        }
+        > a:hover,
+        > span:hover {
+          border-left: 5px solid $ns-black-opacity-10;
+          text-decoration: none;
+          background: $ns-black-opacity-05;
         }
       }
     }
