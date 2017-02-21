@@ -320,7 +320,7 @@ button.ns-button-large {
       float: left;
       width: 100%;
       padding: 0 20px;
-      margin: 10px 0 0 0;
+      margin: 10px 0 5px 0;
       @include box-sizing(border-box);
       > span {
         display: block;
@@ -353,6 +353,11 @@ button.ns-button-large {
           font-size: 13px;
           line-height: 20px;
           color: $ns-white;
+          background: rgba(255, 255, 255, 0.0);
+          @include transition-delay(0);
+          @include transition-timing-function(cubic-bezier(0.40, 0.00, 0.00, 1.00));
+          @include transition-property(background);
+          @include transition-duration(0.300s);
           @include box-sizing(border-box);
           > span.ss-icon {
             display: inline-block;
@@ -573,11 +578,17 @@ button.ns-button-large {
           width: 100%;
           min-width: 252px;
           padding: 7px 20px 8px 15px;
-          border-left: 5px solid transparent;
+          border-left: 5px solid rgba(0, 0, 0, 0.0);
           font-size: 14px;
           line-height: 18px;
           @include box-sizing(border-box);
           position: relative;
+          background: rgba(255, 255, 255, 0.0);
+          @include transition-delay(0);
+          @include transition-timing-function(cubic-bezier(0.40, 0.00, 0.00, 1.00));
+          @include transition-property(background, border);
+          @include transition-duration(0.300s);
+          @include box-sizing(border-box);
           > em {
             font-size: 12px;
             @include opacity(0.66);
@@ -684,6 +695,75 @@ ol.ns-font-specimens {
   }
 }
 
+ol.ns-font-size-specimens {
+  display: block;
+  float: left;
+  width: 100%;
+  > li {
+    display: block;
+    float: left;
+    width: 100%;
+    min-height: 140px;
+    margin: 0 0 48px 0;
+    > ol {
+      display: block;
+      float: left;
+      width: 200px;
+      position: absolute;
+      > li {
+        display: block;
+        float: left;
+        width: 100%;
+        font-size: 13px;
+        line-height: 20px;
+        color: $ns-light-grey;
+      }
+      > li:nth-child(1) {
+        margin: 0 0 5px 0;
+        font-family: $font-secondary;
+        font-size: 11px;
+        line-height: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+    > p {
+      display: block;
+      float: left;
+      width: 100%;
+      padding: 0 0 0 220px;
+      font-family: 'Helvetica Neue';
+      @include box-sizing(border-box);
+    }
+    > p.ns-font-size-specimen-smaller {
+      font-size: 11px;
+      line-height: 16px;
+    }
+    > p.ns-font-size-specimen-small {
+      font-size: 11px;
+      line-height: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    > p.ns-font-size-specimen-regular {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    > p.ns-font-size-specimen-large {
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: lighter;
+    }
+    > p.ns-font-size-specimen-larger {
+      font-size: 72px;
+      line-height: 80px;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+  }
+}
+
 .ns-logo-specimen {
   display: block;
   float: left;
@@ -740,6 +820,14 @@ ol.ns-button-specimens {
     display: block;
     float: left;
     margin: 0 10px 48px 0;
+    .ns-button,
+    input[type="submit"],
+    input[type="button"],
+    input[type="reset"],
+    button {
+      font-family: "Helvetica Neue";
+      @include border-radius(5px);
+    }
   }
 }
 
