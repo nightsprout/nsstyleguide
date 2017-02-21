@@ -8,6 +8,10 @@ Nsstyleguide::Application.routes.draw do
   get '/buttons'     => 'home#buttons'
   get '/forms'       => 'home#forms'
   get '/icons'       => 'home#icons'
+  get '/logo'        => 'home#logo'
+  get '/colors'      => 'home#colors'
+  get '/typography'  => 'home#typography'
+  get '/lists'       => 'home#lists'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
