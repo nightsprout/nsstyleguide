@@ -142,14 +142,18 @@ $font-primary-text-line-height: 30px;
 // Media Size Breakpoints
 // **************************************************
 
+$cinema-breakpoint: 1800px;
 $monitor-breakpoint: 1200px;
 $laptop-breakpoint: 980px;
 $tablet-breakpoint: 768px;
 $phone-breakpoint: 480px;
 
 @mixin screen-format($media-type) {
-  @if $media-type == monitor {
-    @media (min-width: $monitor-breakpoint) { @content; }
+  @if $media-type == cinema {
+    @media (min-width: $cinema-breakpoint) { @content; }
+  }
+  @else if $media-type == monitor {
+    @media (min-width: $monitor-breakpoint) and (max-width: $cinema-breakpoint - 1) { @content; }
   }
   @else if $media-type == laptop {
     @media (min-width: $laptop-breakpoint) and (max-width: $monitor-breakpoint - 1) { @content; }

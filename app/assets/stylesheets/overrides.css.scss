@@ -394,11 +394,11 @@ button.ns-button-large {
     @include order(2);
     @include flex-basis(100%);
     @include screen-format(phone) {
-      padding: 0;
+      padding: 0 20px;
       @include flex-basis(100%);
     }
     @include screen-format(nano) {
-      padding: 0;
+      padding: 0 20px;
       @include flex-basis(100%);
     }
     ol#ns-module-breadcrumbs {
@@ -458,7 +458,13 @@ button.ns-button-large {
         display: block;
         float: left;
         width: 100%;
-        padding: 0 624px 0 0;
+        padding: 0;
+        @include screen-format(cinema) {
+          padding: 0 624px 0 0;
+        }
+        @include screen-format(monitor) {
+          padding: 0 50% 0 0;
+        }
         @include box-sizing(border-box);
         > h1 {
           display: block;
@@ -477,10 +483,21 @@ button.ns-button-large {
       }
       .ns-module-header-actions {
         display: block;
-        float: right;
-        width: 264px;
-        position: absolute;
-        right: 0;
+        float: left;
+        width: 100%;
+        margin: 20px 0 0 0;
+        @include screen-format(cinema) {
+          width: 264px;
+          margin: 0;
+          position: absolute;
+          right: 0;
+        }
+        @include screen-format(monitor) {
+          width: 264px;
+          margin: 0;
+          position: absolute;
+          right: 0;
+        }
         .ns-button,
         input[type="submit"],
         input[type="button"],
