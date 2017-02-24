@@ -20,6 +20,15 @@
 
   <div id="ns-template">
 
+    <button
+      id="ns-hamburger-menu-button"
+      ng-click="nsStateMachine.navDrawer.toggle();"
+      class="ss-icon"
+      >
+      List
+    </button>
+    <!-- #ns-hamburger-menu-button -->
+
     <div id="ns-template-column-left">
       <div id="ns-template-column-left-header">
         <div id="ns-template-column-left-header-logo">
@@ -65,7 +74,10 @@
 <%= yield %>
 
 
-    <div id="ns-template-column-right">
+    <div
+      id="ns-template-column-right"
+      ng-class="{ 'ns-template-column-right-slide-state' : nsStateMachine.navDrawer.isVisible }"
+      >
 
       <h5 class="ns-template-column-right-header">
         <strong><span>Patch</span> Release Notes</strong>

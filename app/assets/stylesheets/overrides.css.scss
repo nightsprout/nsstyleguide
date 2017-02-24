@@ -191,6 +191,7 @@ html, body {
   height: 100%;
 }
 
+
 // Button Color Variations
 // **************************************************
 
@@ -248,26 +249,61 @@ button.ns-button-large {
   @include flex-direction(row);
   @include justify-content(flex-start);
   @include align-items(stretch);
+  @include screen-format(tablet) {
+    @include flex-wrap(wrap);
+  }
   @include screen-format(phone) {
     @include flex-wrap(wrap);
   }
   @include screen-format(nano) {
     @include flex-wrap(wrap);
   }
+  #ns-hamburger-menu-button {
+    display: none;
+    visibility: hidden;
+    width: 60px;
+    height: 60px;
+    margin: 10px 0 0 10px;
+    line-height: 46px;
+    background: $ns-red;
+    color: $ns-white;
+    position: fixed;
+    @include screen-format(tablet) {
+      display: block;
+      visibility: visible;
+    }
+    @include screen-format(phone) {
+      display: block;
+      visibility: visible;
+    }
+    @include screen-format(nano) {
+      display: block;
+      visibility: visible;
+    }
+  }
   #ns-template-column-left {
     padding: 0 5px 0 0;
     background: $ns-dark-grey asset-url("core/ns-template-column-left-background.png") repeat-y top right;
     color: $ns-white;
+    position: relative;
     @include order(1);
     @include flex-basis(257px);
+    @include screen-format(tablet) {
+      padding: 0;
+      background: $ns-dark-grey;
+      position: absolute;
+      @include flex-basis(100%);
+    }
     @include screen-format(phone) {
       padding: 0;
       background: $ns-dark-grey;
+      position: absolute;
       @include flex-basis(100%);
     }
     @include screen-format(nano) {
       padding: 0;
       background: $ns-dark-grey;
+      position: absolute;
       @include flex-basis(100%);
     }
     #ns-template-column-left-header {
@@ -389,10 +425,25 @@ button.ns-button-large {
       }
     }
   }
+  #ns-template-column-middle.ns-template-column-left-slide-state {
+    @include translateX(100%);
+  }
   #ns-template-column-middle {
     padding: 0 48px;
+    min-width: 0;
+    background: $color-page-background;
+    position: relative;
+    @include translateX(0);
     @include order(2);
     @include flex-basis(100%);
+    @include transition-delay(0);
+    @include transition-timing-function(cubic-bezier(0.40, 0.00, 0.00, 1.00));
+    @include transition-property(transform);
+    @include transition-duration(0.300s);
+    @include screen-format(tablet) {
+      padding: 0 20px;
+      @include flex-basis(100%);
+    }
     @include screen-format(phone) {
       padding: 0 20px;
       @include flex-basis(100%);
@@ -546,10 +597,22 @@ button.ns-button-large {
       }
     }
   }
+  #ns-template-column-right.ns-template-column-right-slide-state {
+    @include translateX(100%);
+  }
   #ns-template-column-right {
     background: $ns-very-light-grey asset-url("core/ns-template-column-right-background.png") repeat-y top left;
+    position: relative;
+    @include translateX(0);
     @include order(3);
     @include flex-basis(252px);
+    @include transition-delay(0);
+    @include transition-timing-function(cubic-bezier(0.40, 0.00, 0.00, 1.00));
+    @include transition-property(transform);
+    @include transition-duration(0.300s);
+    @include screen-format(tablet) {
+      @include flex-basis(100%);
+    }
     @include screen-format(phone) {
       @include flex-basis(100%);
     }
@@ -716,26 +779,61 @@ ol.ns-font-size-specimens {
   display: block;
   float: left;
   width: 100%;
+  > li:nth-child(1) {
+    padding: 0;
+    border: none;
+  }
   > li {
     display: block;
     float: left;
     width: 100%;
     min-height: 140px;
+    padding: 48px 0 0 0;
     margin: 0 0 48px 0;
+    border-top: 1px solid $ns-black-opacity-10;
+    @include screen-format(cinema) {
+      border: none;
+      padding: 0;
+    }
+    @include screen-format(monitor) {
+      border: none;
+      padding: 0;
+    }
     > ol {
       display: block;
       float: left;
-      width: 200px;
-      position: absolute;
+      width: 100%;
+      margin: 0 0 20px 0;
+      position: relative;
+      @include screen-format(cinema) {
+        width: 200px;
+        margin: 0;
+        position: absolute;
+      }
+      @include screen-format(monitor) {
+        width: 200px;
+        margin: 0;
+        position: absolute;
+      }
       > li {
         display: block;
         float: left;
-        width: 100%;
+        width: 45%;
+        padding: 0 5% 5px 0;
         font-size: 13px;
         line-height: 20px;
         color: $ns-light-grey;
+        @include screen-format(cinema) {
+          width: 100%;
+          padding: 0;
+        }
+        @include screen-format(monitor) {
+          width: 100%;
+          padding: 0;
+        }
       }
       > li:nth-child(1) {
+        width: 100%;
         margin: 0 0 5px 0;
         font-family: $font-secondary;
         font-size: 11px;
@@ -748,9 +846,14 @@ ol.ns-font-size-specimens {
       display: block;
       float: left;
       width: 100%;
-      padding: 0 0 0 220px;
       font-family: 'Helvetica Neue';
       @include box-sizing(border-box);
+      @include screen-format(cinema) {
+        padding: 0 0 0 220px;
+      }
+      @include screen-format(monitor) {
+        padding: 0 0 0 220px;
+      }
     }
     > p.ns-font-size-specimen-smaller {
       font-size: 11px;
@@ -875,4 +978,6 @@ ol.ns-button-specimens {
 
 // .ns-selector { z-index: 500; }
 
+
+#ns-hamburger-menu-button {                     z-index: 450; }
 
